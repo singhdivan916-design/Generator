@@ -1,0 +1,14 @@
+{
+  "builds": [
+    { "src": "generate.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "generate.py" }
+  ],
+  "functions": {
+    "generate.py": {
+      "maxDuration": 60,
+      "memory": 512
+    }
+  }
+}
